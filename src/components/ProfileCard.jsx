@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function ProfileCard() {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-white/10 p-6 md:p-8 bg-white dark:bg-slate-900">
+    <div className="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-white/10 p-6 md:p-8 bg-white dark:bg-slate-900 mt-20">
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-fuchsia-500/10" />
       <div className="relative">
         <h3 className="text-xl font-semibold">Anthony Samson</h3>

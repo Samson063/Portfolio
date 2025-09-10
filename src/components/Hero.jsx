@@ -15,8 +15,18 @@ export default function Hero() {
   const [displayed, setDisplayed] = useState("");
   const [index, setIndex] = useState(0);
 
+  useEffect (() => {
+    if (index < myName.length) {
+      const timeout = setTimeout(() => {
+        setDisplayed((prev) => prev + myName[index]);
+        setIndex(index + 1);
+      }, 150);
+      return () => clearTimeout(timeout);
+    }
+ }, [index, myName]);
+
   return (
-    <section id="home" className="relative mx-auto max-w-6xl px-4 pt-20">
+    <section id="home" className="relative mx-auto px-4 pt-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -24,17 +34,12 @@ export default function Hero() {
         className="grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-center"
       >
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs border-slate-200 bg-white/70 dark:bg-white/5 dark:border-white/10">
-            <span className="h-5 w-5 flex items-center justify-center rounded-full bg-indigo-600 text-white dark:bg-indigo-500">
-              <Sparkles size={14} />
-            </span>
-            Building for the web, edge, and community
-          </div>
           <h1 className="mt-5 text-4xl font-extrabold tracking-tight md:text-6xl">
             Hi, I’m{" "}
-            <span className="bg-gradient-to-r from-indigo-600 to-fuchsia-500 bg-clip-text text-transparent">
-              Anthony Samson
-            </span>{" "}
+           <h1 className="text-4xl md:text-6xl font-extrabold text-indigo-600 font-mono">
+            {displayed}
+            <span className="animate-pulse">|</span>
+          </h1>
             — Frontend Engineer & UI Builder
           </h1>
           <p className="mt-4 max-w-2xl text-base md:text-lg text-slate-600 dark:text-slate-300">
@@ -70,9 +75,9 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <ProfileCard />
         </motion.div>
       </motion.div>
+      <ProfileCard />
     </section>
   );
 }
