@@ -29,13 +29,11 @@ export default function Hero() {
   // GSAP
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Main container animation
       gsap.fromTo(sectionRef.current, 
         { opacity: 0 },
         { opacity: 1, duration: 0.5 }
       );
 
-      // Text content animation
       gsap.fromTo(textContentRef.current,
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 1.0, delay: 0.2 }
@@ -43,7 +41,6 @@ export default function Hero() {
 
      
 
-      // Skills animation
       gsap.fromTo(skillsRef.current,
         { opacity: 0, y: 10 },
         { 
@@ -56,7 +53,7 @@ export default function Hero() {
       );
     });
 
-    return () => ctx.revert(); // Cleanup
+    return () => ctx.revert();
   }, []);
 
   const addToSkillsRef = (el) => {
@@ -68,7 +65,7 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="mx-auto px-4 pt-20 flex items-center justify-center"
+      className="px-4 pt-20 flex items-center justify-center bg-blue-300"
       ref={sectionRef}
     >
       <div className="flex items-center justify-center flex-col">
