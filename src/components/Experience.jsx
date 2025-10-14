@@ -23,7 +23,7 @@ export default function Experience() {
     },
     {
       title: "Computer Science Student",
-      company: "University",
+      company: "BOUESTI",
       date: "Ongoing",
       description:
         "Studying core computer science while specializing in frontend development and exploring backend with Go, and PostgreSQL.",
@@ -202,7 +202,7 @@ export default function Experience() {
       <div className="relative">
         <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-500 to-gray-500"></div>
         
-        <div className="space-y-12 ml-8">
+        <div className="space-y-12 md:ml-8">
           {experiences.map((exp) => (
             <div 
               key={exp.title} 
