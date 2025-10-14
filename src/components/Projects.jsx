@@ -148,7 +148,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="projects" className="max-w-6xl mx-auto px-4 py-20 relative overflow-hidden">
+    <section ref={sectionRef} id="projects" className="max-w-6xl mx-auto px-4 py-20 relative overflow-hidden font-mono">
 
       <h2 className="projects-title text-3xl text-gray-400 font-bold mb-10 text-center">Projects</h2>
       
@@ -160,10 +160,10 @@ export default function Projects() {
             href={p.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="block rounded-2xl border border-slate-200 dark:border-white/10 p-6 hover:shadow-lg transition-all duration-300 bg-white/5 backdrop-blur-sm transform-style-preserve-3d"
+            className="block rounded-2xl border border-gray-600 dark:border-white/10 p-6 hover:shadow-lg transition-all duration-300 bg-white/5 backdrop-blur-sm transform-style-preserve-3d"
           >
-            <h3 className="project-name text-xl font-semibold mb-3 text-white">{p.name}</h3>
-            <p className="project-description text-slate-600 dark:text-slate-400 leading-relaxed">
+            <h3 className="project-name text-xl font-semibold mb-3 text-gray-300">{p.name}</h3>
+            <p className="project-description text-gray-400 dark:text-slate-400 leading-relaxed">
               {p.description}
             </p>
             

@@ -12,21 +12,21 @@ export default function Experience() {
       company: "BeCreative",
       date: "2023 – Present",
       description:
-        "Mentoring creatives in UI/UX, product design, motion design, and data analysis. Building community-driven projects with React and modern web tools.",
+        "Building community-driven projects with React and modern web tools.",
     },
     {
       title: "Freelance Software Developer",
       company: "Self-employed",
       date: "2022 – Present",
       description:
-        "Built websites including Becreativeux.com and Jbrandyentertainment.com. Focused on performance, accessibility, and beautiful UI design.",
+        "Built websites including Jbrandyentertainment.com. Focused on performance, accessibility, and beautiful UI design.",
     },
     {
       title: "Computer Science Student",
       company: "University",
       date: "Ongoing",
       description:
-        "Studying core computer science while specializing in frontend development and exploring backend with Go, Node.js, and PostgreSQL.",
+        "Studying core computer science while specializing in frontend development and exploring backend with Go, and PostgreSQL.",
     },
   ];
 
@@ -34,7 +34,6 @@ export default function Experience() {
   const titleRef = useRef(null);
   const experienceItemsRef = useRef([]);
 
-  // Add experience item to refs array
   const addToExperienceRefs = (el) => {
     if (el && !experienceItemsRef.current.includes(el)) {
       experienceItemsRef.current.push(el);
@@ -43,7 +42,6 @@ export default function Experience() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title animation with text reveal effect - REPEATS on scroll
       gsap.fromTo(titleRef.current,
         { 
           opacity: 0,
@@ -61,7 +59,7 @@ export default function Experience() {
             start: "top 80%",
             end: "bottom 20%",
             toggleActions: "play reverse play reverse",
-            markers: false, // Set to true to see scroll trigger markers
+            markers: false,
           }
         }
       );
@@ -80,7 +78,6 @@ export default function Experience() {
       experienceItemsRef.current.forEach((item, index) => {
         const itemTimeline = gsap.timeline();
         
-        // Border line drawing animation
         itemTimeline.fromTo(item.querySelector('.timeline-line'),
           { scaleY: 0, transformOrigin: "top center" },
           { 
@@ -154,7 +151,6 @@ export default function Experience() {
       });
 
 
-      // Hover animations
       experienceItemsRef.current.forEach((item) => {
         item.addEventListener('mouseenter', () => {
           gsap.to(item, {
@@ -165,7 +161,7 @@ export default function Experience() {
             ease: "power2.out"
           });
           
-          // Animate the timeline dot
+
           gsap.to(item.querySelector('.timeline-dot'), {
             scale: 1.5,
             backgroundColor: "#4F46E5",
@@ -198,7 +194,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="experience" className="max-w-6xl mx-auto px-4 py-20 relative overflow-hidden">
+    <section ref={sectionRef} id="experience" className="max-w-6xl mx-auto px-4 py-20 relative overflow-hidden font-mono">
       <h2 ref={titleRef} className="text-3xl text-gray-400 font-bold mb-16 font-mono text-center">
         Experience
       </h2>
@@ -218,9 +214,9 @@ export default function Experience() {
               <div className="absolute left-2 top-6 bottom-0 w-0.5 bg-gradient-to-b from-gray-500 to-transparent timeline-line"></div>
 
               {/* content container */}
-              <div className="experience-content bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-indigo-500/30 transition-all duration-300">
+              <div className="experience-content bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-500 transition-all duration-300">
                 <div className="experience-text">
-                  <h3 className="font-semibold text-lg text-white mb-2">{exp.title}</h3>
+                  <h3 className="font-semibold text-lg text-gray-300 mb-2">{exp.title}</h3>
                   <p className="text-sm text-slate-400 mb-3">
                     {exp.company} • <span className="text-blue-400">{exp.date}</span>
                   </p>

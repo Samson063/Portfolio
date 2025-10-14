@@ -187,7 +187,6 @@ export default function Contact() {
         });
       }
 
-      // Floating background animation
       gsap.to(".contact-bg", {
         y: 30,
         rotation: 180,
@@ -203,7 +202,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="contact" className="max-w-4xl mx-auto px-4 py-20 relative overflow-hidden">
+    <section ref={sectionRef} id="contact" className="max-w-4xl mx-auto px-4 py-20 relative overflow-hidden font-mono">
       {/* Animated background */}
       <div className="contact-bg absolute -top-40 -right-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
       <div className="contact-bg absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>

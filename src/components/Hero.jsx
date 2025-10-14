@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 export default function Hero() {
   const skills = [
-    "React", "JavaScript", "Go", "Tailwind", "Graphics Design", "Video Editing", "Git & Github"
+    "React", "JavaScript", "Go", "Tailwind", "Git & Github", "Graphics Design", "Video Editing"
   ];
 
   const myName = "Anthony Samson";
@@ -89,11 +89,11 @@ export default function Hero() {
             Experience includes building and designing beautiful User Interfaces, and developing high-quality in-house tools to ease the development, management, 
             and scaling of products.
 {" "}
-            <a href="https://becreativeux.com" className="underline decoration-dotted hover:text-indigo-500">
+            <a href="https://becreativeux.com" className="underline decoration-dotted hover:text-blue-500">
               Becreativeux.com
             </a>{" "}
             and{" "}
-            <a href="https://jbrandyentertainment.com" className="underline decoration-dotted hover:text-indigo-500">
+            <a href="https://jbrandyentertainment.com" className="underline decoration-dotted hover:text-blue-500">
               Jbrandyentertainment.com
             </a>.
           </p>
@@ -101,8 +101,8 @@ export default function Hero() {
             <a href="#projects" className="rounded-2xl bg-gray-800 px-5 py-3 text-gray-300 flex items-center hover:text-gray-100">
               View Projects <ArrowRight className="ml-2 h-4 w-4" />
             </a>
-            <a href="#contact" className="rounded-2xl border px-5 py-3 flex items-center">
-              Contact <Mail className="ml-2 h-4 w-4" />
+            <a href="#contact" className="rounded-2xl border border-gray-400 text-gray-400 px-5 py-3 flex items-center">
+              Contact <Mail className="ml-2 h-4 w-4 text-gray-400" />
             </a>
           </div>
           <div className="mt-8 flex flex-wrap gap-2">
