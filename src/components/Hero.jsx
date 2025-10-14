@@ -65,13 +65,13 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="px-4 pt-20 flex items-center justify-center bg-blue-300"
+      className="px-4 pt-20 flex items-center justify-center"
       ref={sectionRef}
     >
       <div className="flex items-center justify-center flex-col">
         <div 
           ref={textContentRef}
-          className="justify-center items-center ml-20"
+          className="flex justify-center items-start flex-col"
         >
           <h1 className="mt-5 text-4xl font-extrabold tracking-tight md:text-6xl text-gray-400 font-mono">
             Hi, I'm{" "}
@@ -84,10 +84,11 @@ export default function Hero() {
            <p className="text-gray-300 dark:text-slate-300 font-mono">
             Software Developer • Frontend Engineer • Computer Science Student
           </p>
-          <p className="mt-4 max-w-2xl text-base md:text-lg text-gray-400 dark:text-slate-300 font-mono">
-            I design and build fast, accessible interfaces, mentor creatives at
-            BeCreative, and explore backend development with Go & Node.js.
-            Recently, I worked on{" "}
+          <p className="mt-4 max-w-5xl text-base md:text-lg text-gray-400 dark:text-slate-300 font-mono">
+            A Poised, professional, and product-oriented frontEnd Engineer  with experience working in a variety of fast-paced, dynamic, and ever-changing settings. 
+            Experience includes building and designing beautiful User Interfaces, and developing high-quality in-house tools to ease the development, management, 
+            and scaling of products.
+{" "}
             <a href="https://becreativeux.com" className="underline decoration-dotted hover:text-indigo-500">
               Becreativeux.com
             </a>{" "}
