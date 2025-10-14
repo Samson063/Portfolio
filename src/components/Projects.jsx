@@ -141,15 +141,6 @@ export default function Projects() {
         });
       });
 
-      // Floating background animation
-      gsap.to(".floating-bg", {
-        y: 30,
-        rotation: 180,
-        duration: 8,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-      });
 
     }, sectionRef);
 
@@ -158,11 +149,8 @@ export default function Projects() {
 
   return (
     <section ref={sectionRef} id="projects" className="max-w-6xl mx-auto px-4 py-20 relative overflow-hidden">
-      {/* Floating background */}
-      <div className="floating-bg absolute -top-20 -right-20 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl"></div>
-      <div className="floating-bg absolute -bottom-20 -left-20 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
 
-      <h2 className="projects-title text-3xl font-bold mb-10 text-center">Projects</h2>
+      <h2 className="projects-title text-3xl text-gray-400 font-bold mb-10 text-center">Projects</h2>
       
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => (
@@ -180,7 +168,7 @@ export default function Projects() {
             </p>
             
             {/* Animated arrow */}
-            <div className="mt-4 flex items-center text-indigo-500 text-sm font-medium">
+            <div className="mt-4 flex items-center text-blue-400 text-sm font-medium">
               View Project
               <svg 
                 className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
