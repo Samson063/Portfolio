@@ -19,10 +19,10 @@ export default function Projects() {
         "Entertainment website built with React and Tailwind, focusing on performance and engaging UI.",
     },
     {
-      name: "Service Apartment Platform",
+      name: "PropComfy",
       link: "#",
       description:
-        "Ongoing project for real estate listings with interactive booking flows and modern frontend architecture.",
+        "Ongoing project for real estate listings.",
     },
   ];
 
@@ -37,7 +37,6 @@ export default function Projects() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title animation
       gsap.fromTo(".projects-title",
         { 
           opacity: 0,
@@ -58,7 +57,7 @@ export default function Projects() {
         }
       );
 
-      // Cards animation with complex entrance
+      // Cards animation
       projectsRef.current.forEach((card, index) => {
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -68,7 +67,7 @@ export default function Projects() {
           }
         });
 
-        // Complex staggered animation
+        // staggered animation
         tl.fromTo(card,
           {
             opacity: 0,
@@ -117,7 +116,6 @@ export default function Projects() {
           "-=0.3"
         );
 
-        // Magnetic hover effect
         card.addEventListener("mouseenter", () => {
           gsap.to(card, {
             y: -10,

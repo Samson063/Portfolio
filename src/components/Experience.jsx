@@ -8,16 +8,16 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Experience() {
   const experiences = [
     {
-      title: "Frontend Engineer & Mentor",
+      title: "Frontend Engineer",
       company: "BeCreative",
-      date: "2023 – Present",
+      date: "2025 – Present",
       description:
         "Building community-driven projects with React and modern web tools.",
     },
     {
       title: "Freelance Software Developer",
       company: "Self-employed",
-      date: "2022 – Present",
+      date: "2023 – Present",
       description:
         "Built websites including Jbrandyentertainment.com. Focused on performance, accessibility, and beautiful UI design.",
     },
@@ -64,7 +64,6 @@ export default function Experience() {
         }
       );
 
-      // Experience items timeline - REPEATS on scroll
       const experienceTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -214,7 +213,7 @@ export default function Experience() {
               <div className="absolute left-2 top-6 bottom-0 w-0.5 bg-gradient-to-b from-gray-500 to-transparent timeline-line"></div>
 
               {/* content container */}
-              <div className="experience-content bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-500 transition-all duration-300">
+              <div className="experience-content bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gray-600 hover:border-blue-500 transition-all duration-300">
                 <div className="experience-text">
                   <h3 className="font-semibold text-lg text-gray-300 mb-2">{exp.title}</h3>
                   <p className="text-sm text-slate-400 mb-3">

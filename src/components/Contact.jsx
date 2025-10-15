@@ -24,33 +24,47 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  // ✅ Updated handleSubmit (Gmail + fallback to default email client)
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus("");
 
-    // Create mailto link with form data
-    const mailtoLink = `mailto:anthonysamson.dev@outlook.com?subject=${encodeURIComponent(formData.subject || `Message from ${formData.name}`)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    const { name, email, subject, message } = formData;
+
+    // Gmail compose link
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=anthonysamson063@gmail.com&su=${encodeURIComponent(
+      subject || `Message from ${name}`
+    )}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     )}`;
 
-    // Open default email client
-    window.location.href = mailtoLink;
-    
-    // Simulate submission success
+    // Mailto fallback (for non-Gmail users)
+    const mailtoLink = `mailto:anthonysamson063@gmail.com?subject=${encodeURIComponent(
+      subject || `Message from ${name}`
+    )}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`;
+
+    // Try to open Gmail in new tab
+    const newTab = window.open(gmailLink, "_blank");
+
+    // If popup blocked or Gmail not available, fall back to mailto
+    if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
+      window.location.href = mailtoLink;
+    }
+
+    // Reset states
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
-      
-      // Reset status after 3 seconds
+
       setTimeout(() => setSubmitStatus(""), 3000);
     }, 1000);
   };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title animation
       gsap.fromTo(".contact-title",
         {
           opacity: 0,
@@ -73,7 +87,6 @@ export default function Contact() {
         }
       );
 
-      // Form animation
       gsap.fromTo(formRef.current,
         {
           opacity: 0,
@@ -95,7 +108,6 @@ export default function Contact() {
         }
       );
 
-      // Input field animations
       const inputs = gsap.utils.toArray(".form-input");
       inputs.forEach((input, index) => {
         gsap.fromTo(input,
@@ -119,7 +131,6 @@ export default function Contact() {
           }
         );
 
-        // Input focus animation
         input.addEventListener("focus", () => {
           gsap.to(input, {
             scale: 1.02,
@@ -141,7 +152,6 @@ export default function Contact() {
         });
       });
 
-      // Button animation
       gsap.fromTo(".submit-btn",
         {
           opacity: 0,
@@ -163,7 +173,6 @@ export default function Contact() {
         }
       );
 
-      // Button hover animation
       const button = document.querySelector(".submit-btn");
       if (button) {
         button.addEventListener("mouseenter", () => {
@@ -203,7 +212,6 @@ export default function Contact() {
 
   return (
     <section ref={sectionRef} id="contact" className="max-w-4xl mx-auto px-4 py-20 relative overflow-hidden font-mono">
-      {/* Animated background */}
       <div className="contact-bg absolute -top-40 -right-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
       <div className="contact-bg absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
 
@@ -309,7 +317,6 @@ export default function Contact() {
           )}
         </form>
 
-        {/* Alternative contact methods */}
         <div className="mt-8 pt-8 border-t border-slate-700/50">
           <p className="text-center text-slate-400 mb-4">Or reach out directly</p>
           <div className="flex justify-center space-x-6">

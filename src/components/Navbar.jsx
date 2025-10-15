@@ -29,11 +29,11 @@ export default function Navbar() {
   }, []);
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
-    { icon: FileText, href: "/resume.pdf", label: "Resume" }
+    { icon: Github, href: "https://github.com/Samson063", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/anthony-samsonnnn/", label: "LinkedIn" },
+    { icon: Twitter, href: "https://x.com/anth_samson", label: "Twitter" },
+    { icon: Mail, href: "mailto:anthonysamson063@gmail.com", label: "Email" },
+    // { icon: FileText, href: "/resume.pdf", label: "Resume" }
   ];
 
   const navLinks = [
