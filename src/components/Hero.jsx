@@ -65,7 +65,7 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="px-4 pt-20 flex items-center justify-center"
+      className="px-4 pt-5 flex items-center justify-center md:pt-20"
       ref={sectionRef}
     >
       <div className="flex items-center justify-center flex-col">
@@ -73,29 +73,18 @@ export default function Hero() {
           ref={textContentRef}
           className="flex justify-center items-start flex-col"
         >
-          <h1 className="mt-5 text-4xl font-extrabold tracking-tight md:text-6xl text-gray-400 font-mono">
+          <h1 className="mt-5 text-[27px] font-extrabold tracking-tight md:text-6xl text-gray-400 font-mono my-2">
             Hi, I'm{" "}
-            <span className="text-4xl md:text-6xl font-extrabold text-gray-300 font-mono">
+            <span className="text-[27px] md:text-6xl font-extrabold text-gray-300 font-mono">
               {displayed}
               <span className="animate-pulse">|</span>
             </span>
           </h1>
-          <h2 className="text-gray-400 text-lg font-semibold">Frontend Engineer</h2>
-           <p className="text-gray-300 dark:text-slate-300 font-mono">
-            Software Developer • Frontend Engineer • Computer Science Student
+           <p className="text-gray-300 dark:text-slate-300 font-mono text-[12px] md:text-[15px]">
+            Design • Build • Scale
           </p>
-          <p className="mt-4 max-w-5xl text-base md:text-lg text-gray-400 dark:text-slate-300 font-mono">
-            A Poised, professional, and product-oriented frontEnd Engineer  with experience working in a variety of fast-paced, dynamic, and ever-changing settings. 
-            Experience includes building and designing beautiful User Interfaces, and developing high-quality in-house tools to ease the development, management, 
-            and scaling of products.
-{" "}
-            <a href="https://becreativeux.com" className="underline decoration-dotted hover:text-blue-500">
-              Becreativeux.com
-            </a>{" "}
-            and{" "}
-            <a href="https://jbrandyentertainment.com" className="underline decoration-dotted hover:text-blue-500">
-              Jbrandyentertainment.com
-            </a>.
+          <p className="mt-4 max-w-5xl text-base md:text-2xl text-gray-400 dark:text-slate-300 font-mono">
+            Build modern, responsive web experiences using React and Tailwind. I enjoy designing and developing products that are fast, intuitive, and visually appealing.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="#projects" className="rounded-2xl bg-gray-800 px-5 py-3 text-gray-300 flex items-center hover:text-gray-100">

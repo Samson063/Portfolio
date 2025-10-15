@@ -64,7 +64,7 @@ export default function Navbar() {
               }`}
             >
               <Sparkles size={18} className="text-gray-400" />
-              <span className="font-bold text-xl bg-gradient-to-r from-gray-300 to-gray-400 bg-clip-text text-transparent">
+              <span className="font-bold text-xl bg-gradient-to-r from-gray-300 to-gray-400 bg-clip-text text-transparent font-mono">
                 Anthony Samson
               </span>
             </a>

@@ -22,7 +22,6 @@ const PremiumAccordion = ({
 
   const isOpen = (index) => openIndices.includes(index);
 
-  // Theme configurations
   const themes = {
     default: {
       header: 'bg-white hover:bg-gray-50 border-gray-200',
@@ -53,7 +52,6 @@ const PremiumAccordion = ({
     }
   };
 
-  // Animation configurations
   const animations = {
     slide: {
       container: 'transition-all duration-500 ease-out',
@@ -111,7 +109,6 @@ const PremiumAccordion = ({
               {item.title}
             </span>
             
-            {/* Advanced animated icon */}
             <div className="relative">
               <div className={`
                 absolute inset-0 bg-blue-500 rounded-full

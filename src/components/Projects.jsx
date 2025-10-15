@@ -57,7 +57,6 @@ export default function Projects() {
         }
       );
 
-      // Cards animation
       projectsRef.current.forEach((card, index) => {
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -67,7 +66,6 @@ export default function Projects() {
           }
         });
 
-        // staggered animation
         tl.fromTo(card,
           {
             opacity: 0,

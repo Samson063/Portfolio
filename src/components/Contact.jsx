@@ -24,36 +24,30 @@ export default function Contact() {
     });
   };
 
-  // ✅ Updated handleSubmit (Gmail + fallback to default email client)
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     const { name, email, subject, message } = formData;
 
-    // Gmail compose link
     const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=anthonysamson063@gmail.com&su=${encodeURIComponent(
       subject || `Message from ${name}`
     )}&body=${encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     )}`;
 
-    // Mailto fallback (for non-Gmail users)
     const mailtoLink = `mailto:anthonysamson063@gmail.com?subject=${encodeURIComponent(
       subject || `Message from ${name}`
     )}&body=${encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     )}`;
 
-    // Try to open Gmail in new tab
     const newTab = window.open(gmailLink, "_blank");
 
-    // If popup blocked or Gmail not available, fall back to mailto
     if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
       window.location.href = mailtoLink;
     }
 
-    // Reset states
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus("success");
@@ -286,7 +280,7 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               className="form-input w-full px-4 py-3 rounded-xl bg-slate-800/50 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500 transition-all duration-300 resize-none"
-              placeholder="Tell me about your project, collaboration idea, or just say hello!"
+              placeholder="Collaboration idea, or just say hello!"
             />
           </div>
 
@@ -317,20 +311,6 @@ export default function Contact() {
           )}
         </form>
 
-        <div className="mt-8 pt-8 border-t border-slate-700/50">
-          <p className="text-center text-slate-400 mb-4">Or reach out directly</p>
-          <div className="flex justify-center space-x-6">
-            <a
-              href="mailto:anthonysamson.dev@outlook.com"
-              className="text-slate-400 hover:text-white transition-colors duration-300 flex items-center"
-            >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Email
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
