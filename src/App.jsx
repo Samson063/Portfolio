@@ -6,7 +6,7 @@ import Contact from "./components/Contact";
 
 export default function App() {
   return (
-    <div className="bg-black dark:bg-slate-900 text-slate-900 dark:text-white min-h-screen">
+    <div className="bg-black  min-h-screen">
       <Navbar />
       <main className="pt-20">
         <Hero />
