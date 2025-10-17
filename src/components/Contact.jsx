@@ -42,14 +42,12 @@ export default function Contact() {
     `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
   )}`;
 
-  // Check if the user is on a mobile device
+  // Check user is on a mobile device
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   if (isMobile) {
-    // On mobile → open the Gmail app or default email app directly
     window.location.href = mailtoLink;
   } else {
-    // On desktop → open Gmail in a new tab, fallback to mailto if blocked
     const newTab = window.open(gmailLink, "_blank");
     if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
       window.location.href = mailtoLink;

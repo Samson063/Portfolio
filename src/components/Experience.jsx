@@ -199,8 +199,6 @@ export default function Experience() {
       </h2>
       
       <div className="relative">
-        <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-500 to-gray-500"></div>
-        
         <div className="space-y-12 md:ml-8">
           {experiences.map((exp) => (
             <div 
