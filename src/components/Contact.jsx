@@ -25,37 +25,45 @@ export default function Contact() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    const { name, email, subject, message } = formData;
+  const { name, email, subject, message } = formData;
 
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=anthonysamson063@gmail.com&su=${encodeURIComponent(
-      subject || `Message from ${name}`
-    )}&body=${encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    )}`;
+  const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=anthonysamson063@gmail.com&su=${encodeURIComponent(
+    subject || `Message from ${name}`
+  )}&body=${encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+  )}`;
 
-    const mailtoLink = `mailto:anthonysamson063@gmail.com?subject=${encodeURIComponent(
-      subject || `Message from ${name}`
-    )}&body=${encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    )}`;
+  const mailtoLink = `mailto:anthonysamson063@gmail.com?subject=${encodeURIComponent(
+    subject || `Message from ${name}`
+  )}&body=${encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+  )}`;
 
+  // Check if the user is on a mobile device
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // On mobile → open the Gmail app or default email app directly
+    window.location.href = mailtoLink;
+  } else {
+    // On desktop → open Gmail in a new tab, fallback to mailto if blocked
     const newTab = window.open(gmailLink, "_blank");
-
     if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
       window.location.href = mailtoLink;
     }
+  }
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+  setTimeout(() => {
+    setIsSubmitting(false);
+    setSubmitStatus("success");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setTimeout(() => setSubmitStatus(""), 3000);
+  }, 1000);
+};
 
-      setTimeout(() => setSubmitStatus(""), 3000);
-    }, 1000);
-  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
