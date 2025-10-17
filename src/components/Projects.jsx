@@ -146,7 +146,7 @@ export default function Projects() {
   return (
     <section ref={sectionRef} id="projects" className="max-w-6xl mx-auto px-4 py-20 relative overflow-hidden font-mono">
 
-      <h2 className="projects-title text-3xl text-gray-400 font-bold mb-10 text-center">Projects</h2>
+      <h2 className="projects-title text-3xl text-gray-400 font-bold mb-10 text-center">Featured Projects</h2>
       
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => (

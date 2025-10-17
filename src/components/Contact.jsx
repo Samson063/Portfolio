@@ -146,26 +146,6 @@ export default function Contact() {
         });
       });
 
-      gsap.fromTo(".submit-btn",
-        {
-          opacity: 0,
-          scale: 0.8,
-          y: 30
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 1,
-          delay: 0.8,
-          ease: "back.out(1.7)",
-          scrollTrigger: {
-            trigger: ".submit-btn",
-            start: "top 85%",
-            toggleActions: "play reverse play reverse",
-          }
-        }
-      );
 
       const button = document.querySelector(".submit-btn");
       if (button) {
@@ -287,7 +267,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="submit-btn w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl hover:from-gray-100 hover:to-gray-200 hover:text-gray-950 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+            className="submit-btn w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-xl hover:from-gray-100 hover:to-gray-200 hover:text-gray-950 flex items-center justify-center"
           >
             {isSubmitting ? (
               <>
