@@ -211,11 +211,11 @@ export default function Experience() {
               <div className="absolute left-2 top-6 bottom-0 w-0.5 bg-gradient-to-b from-gray-500 to-transparent timeline-line"></div>
 
               {/* content container */}
-              <div className="experience-content bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gray-600 hover:border-blue-500 transition-all duration-300">
+              <div className="experience-content bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gray-900 hover:border-gray-400 transition-all duration-300">
                 <div className="experience-text">
                   <h3 className="font-semibold text-lg text-gray-300 mb-2">{exp.title}</h3>
                   <p className="text-sm text-slate-400 mb-3">
-                    {exp.company} • <span className="text-blue-400">{exp.date}</span>
+                    {exp.company} • <span className="text-gray-300">{exp.date}</span>
                   </p>
                   <p className="text-slate-300 leading-relaxed">
                     {exp.description}
@@ -225,7 +225,7 @@ export default function Experience() {
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
               </div>
 
-              <div className="absolute left-6 top-2 w-2 h-0.5 bg-blue-200 connection-line opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute left-6 top-2 w-2 h-0.5 bg-slate-200 connection-line opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>

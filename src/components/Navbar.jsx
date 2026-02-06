@@ -63,7 +63,6 @@ export default function Navbar() {
                 isScrolled ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
               }`}
             >
-              <Sparkles size={18} className="text-gray-400" />
               <span className="font-bold text-xl bg-gradient-to-r from-gray-300 to-gray-400 bg-clip-text text-transparent font-mono">
                 Anthony Samson
               </span>
